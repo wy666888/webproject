@@ -15,14 +15,14 @@
       <servlet-name>HelloWeb</servlet-name>
       <url-pattern>/</url-pattern>
    </servlet-mapping>
-   <filter>
+   <!-- <filter>
 		<filter-name>freemarkerFilter</filter-name>
 		<filter-class>com.filter.FreemarkerFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>freemarkerFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
   <filter>
     <display-name>LogFilter</display-name>
     <filter-name>LogFilter</filter-name>

@@ -20,10 +20,11 @@ public class WebController {
 	public String redirect() {
 		return "redirect:final";
 	}
-	@RequestMapping("/fianl")
+	@RequestMapping("/final")
 	public String fianl() {
 		return "final";
 	}
+	//存在问题，有时间再看
 	@RequestMapping("/staticPage")
 	public String redirect2() {
 		return "redirect:/pages/final.html";
