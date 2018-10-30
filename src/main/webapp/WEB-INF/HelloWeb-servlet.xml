@@ -37,12 +37,21 @@
         <property name="location" value="classpath:freemarker.properties"/>    
     </bean>  
       
+    <!-- 自定义freeMarker标签 -->    
+    
     <!-- 配置freeMarker的模板路径 -->    
     <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">    
+        <property name="freemarkerVariables">
+            <map >
+                <entry key="upper">
+    				<bean class="com.test.tag.UpperDirective"/>
+                </entry>
+            </map>
+        </property>
         <property name="freemarkerSettings" ref="freemarkerConfiguration"/>    
         <property name="templateLoaderPath">    
             <value>/WEB-INF/ftl/</value>    
-        </property>    
+        </property>
     </bean>  
         
     <!-- 配置freeMarker视图解析器 -->    
