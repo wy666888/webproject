@@ -46,6 +46,12 @@
                 <entry key="upper">
     				<bean class="com.test.tag.UpperDirective"/>
                 </entry>
+                <entry key="repeat">
+    				<bean class="com.test.tag.RepeatDirective"/>
+                </entry>
+                <entry key="auth">
+    				<bean class="com.test.tag.AuthDirective"/>
+                </entry>
             </map>
         </property>
         <property name="freemarkerSettings" ref="freemarkerConfiguration"/>    
