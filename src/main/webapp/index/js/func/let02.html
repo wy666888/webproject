@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="divButtons"></div>
+<script type="text/javascript">
+/* //1. 允许重复的变量声明：导致数据被覆盖
+var a = 1;
+function print(){
+console.log(a)
+}
+//假设这里有一千行代码
+var a = 2;
+print();//2 */
+
+var a = 123;
+//let a = 456; // 检查到，当前作用域（全局作用域）已声明了变量a
+//let a = 123;
+function test(){
+let a = 456;
+console.log(a)//456
+}
+test();
+
+</script>
+</body>
+</html>
