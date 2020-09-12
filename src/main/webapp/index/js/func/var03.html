@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="divButtons"></div>
+<script type="text/javascript">
+
+//2. 变量提升：闭包问题
+/*  
+ * 在循环中，用let声明的循环变量，会特殊处理，每次进入循环体，都会开启一个新的作用域，并且将
+ 循环变量绑定到该作用域（每次循环，使用的是一个全新的循环变量）
+ 在循环中使用let声明的循环变量，在循环结束后会销毁
+ */
+let div = document.getElementById("divButtons")
+for (let i = 1; i <= 10; i++) {
+let btn = document.createElement("button");
+btn.innerHTML = "按钮" + i;
+div.appendChild(btn);
+btn.onclick = function () {
+console.log(i); //输出11
+}
+}
+
+</script>
+</body>
+</html>

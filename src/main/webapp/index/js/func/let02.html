@@ -7,6 +7,7 @@
 <body>
 <div id="divButtons"></div>
 <script type="text/javascript">
+//let声明的变量不会挂载到全局对象
 /* //1. 允许重复的变量声明：导致数据被覆盖
 var a = 1;
 function print(){
@@ -21,9 +22,11 @@ var a = 123;
 //let a = 123;
 function test(){
 let a = 456;
-console.log(a)//456
+console.log(a)
 }
-test();
+console.log(a)//123
+test();//456
+console.log(a)//123
 
 </script>
 </body>
