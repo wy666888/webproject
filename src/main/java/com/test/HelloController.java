@@ -32,15 +32,21 @@ public class HelloController {
 //				.getOrganizationAndUserStr(pid);
 		List<TreeNode> treeNodeList = new ArrayList<TreeNode>();
 		TreeNode node = new TreeNode();
+		node.setId("0");
+		node.setText("000");
+		node.setPid("-1");;
+		treeNodeList.add(node);
+		
+		node = new TreeNode();
 		node.setId("1");
 		node.setText("111");
-		node.setPid("-1");;
+		node.setPid("0");;
 		treeNodeList.add(node);
 		
 		node = new TreeNode();
 		node.setId("2");
 		node.setText("222");
-		node.setPid("-1");;
+		node.setPid("0");;
 		treeNodeList.add(node);
 		
 		String jsonStr = JSON.toJSONString(treeNodeList);
