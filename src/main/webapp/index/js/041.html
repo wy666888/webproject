@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="div1">abcdefg</div>
+<script type="text/javascript">
+//js的执行顺序，此处是顺序执行的，div1的值被改变，div2的值没有被改变
+//Uncaught TypeError: Cannot set property 'innerHTML' of null
+//因为找不到赋值的目标对象，所以是直接报错了
+document.getElementById('div1').innerHTML = 'Hello';
+document.getElementById('div2').innerHTML = 'Hello';
+</script>
+<div id="div2">abcdefg</div>
+</body>
+</html>
