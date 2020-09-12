@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>onload test</title>
+   <!--  <script>
+    // ES5
+      function load() {
+        console.log("load event detected!");
+      }
+      window.onload = load;
+    </script> -->
+    <script>
+    // ES2015(aka: ES6)
+      const load = () => {
+        console.log("load event detected!");
+      } 
+      window.onload = load; 
+    </script>
+  </head>
+  <body>
+    <p>The load event fires when the document has finished loading!</p>
+  </body>
+</html>
