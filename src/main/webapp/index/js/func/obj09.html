@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 4. 字段初始化器（ES7）
+ 注意：
+ 1). 使用static的字段初始化器，添加的是静态成员
+ 2). 没有使用static的字段初始化器，添加的成员位于对象上
+ 3). 箭头函数在字段初始化器位置上，指向当前对象
+ */
+class Test {
+	constructor() {
+	this.a = 123;
+	}
+	print = () => {
+	console.log(this)
+	console.log(this.a)
+	}
+	}
+	const t1 = new Test();
+	const t2 = new Test();
+	t1.print()//Test {a: 123, print: ƒ} 123
+	console.log(t1.print === t2.print)//false
+</script>
+</body>
+</html>
