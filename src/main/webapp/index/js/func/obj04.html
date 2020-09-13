@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 3. Object.getOwnPropertyNames 的枚举顺序
+ Object.getOwnPropertyNames方法之前就存在，只不过，官方没有明确要求，对属性的顺序
+ 如何排序，如何排序，完全由浏览器厂商决定。
+ ES6规定了该方法返回的数组的排序方式如下：
+ 先排数字，并按照升序排序
+ 再排其他，按照书写顺序排序
+ */
+const obj = {
+		d: 1,
+		b: 2,
+		a: 3,
+		0: 6,
+		5: 2,
+		4: 1
+		}
+		const props = Object.getOwnPropertyNames(obj)
+		console.log(props)//["0", "4", "5", "d", "b", "a"]	
+		
+		/*
+		4. Object.setPrototypeOf
+该函数用于设置某个对象的隐式原型
+比如： Object.setPrototypeOf(obj1, obj2)，
+相当于： obj1.__proto__ = obj2
+		*/
+		const obj1 = {
+	a: 1
+	}
+	const obj2 = {
+	b: 2
+	}
+	// obj1.__proto__ = obj2
+	Object.setPrototypeOf(obj1, obj2)
+	console.log(obj1)
+</script>
+</body>
+</html>
