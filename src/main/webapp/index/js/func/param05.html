@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//1. 对数组展开 ES6
+const arr1 = [3, 67, 8, 5];
+//克隆arr1数组到arr2
+const arr2 = [0, ...arr1, 1];
+console.log(arr2, arr1 === arr2)//[0, 3, 67, 8, 5, 1] false
+
+//2. 对对象展开 ES7
+/* const obj1 = {
+	name: "成哥",
+	age: 18,
+	love: "邓嫂",	
+	address: {
+	country: "中国",
+	province: "黑龙江",
+	city: "哈尔滨"
+	}
+	}
+	// 浅克隆到obj2
+	const obj2 = {
+	...obj1,
+	name: "邓哥"
+	};
+	console.log(obj2)
+	console.log(obj1.address === obj2.address) */
+	
+	const obj1 = {
+name: "成哥",
+age: 18,
+loves: ["邓嫂", "成嫂1", "成嫂2"],
+address: {
+country: "中国",
+province: "黑龙江",
+city: "哈尔滨"
+}
+}
+// 浅克隆到obj2
+const obj2 = {
+...obj1,
+name: "邓哥",
+address: {
+...obj1.address
+},
+loves: [...obj1.loves, "成嫂3"]
+};
+console.log(obj2)
+console.log(obj1.loves === obj2.loves)
+</script>
+</body>
+</html>
