@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * ES6的剩余参数专门用于手机末尾的所有参数，将其放置到一个形参数组中。
+ 语法:
+	 function (...形参名){
+	 }
+细节：
+1. 一个函数，仅能出现一个剩余参数
+2. 一个函数，如果有剩余参数，剩余参数必须是最后一个参数
+ */
+function sum(...args) {
+	//args收集了所有的参数，形成的一个数组
+	let sum = 0;
+	for (let i = 0; i < args.length; i++) {
+	sum += args[i];
+	}
+	return sum;
+	}
+	console.log(sum())//0
+	console.log(sum(1))//1
+	console.log(sum(1, 2))//3
+	console.log(sum(1, 2, 3))//6
+	console.log(sum(1, 2, 3, 4))//10
+	function test(a, b, ...args) {
+	console.log(args)
+	}
+	test(1, 32, 46, 7, 34); // [46, 7, 34]
+</script>
+</body>
+</html>
