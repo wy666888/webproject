@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 3. 静态成员
+ 构造函数本身的成员
+ 使用static关键字定义的成员即静态成员（包括属性和方法）
+ 注意静态成员只能是使用类名.成员名的方式进行调用，使用具体的对象进行调用的话会报错的，这和Java中不一样；
+ 同样的，非静态成员只能使用具体的对象名.成员名的方式进行调用的，使用类名.成员名会报错的
+ */
+class Chess {
+	constructor(name) {
+	this.name = name;
+	}
+	width = 50;
+	static height = 50;
+	static method() {
+	console.log('静态成员')
+	}
+	}
+	console.log(Chess)
+	console.log(Chess.width,Chess.height)//undefined 50
+	Chess.method();//静态成员
+	const a = new Chess("zhangsan");
+	console.log(a)
+	console.log(a.width,a.height)//50 undefined
+	a.method();//报错
+</script>
+</body>
+</html>
