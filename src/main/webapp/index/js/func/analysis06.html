@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 数组解构
+ 数组解构
+ 对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变
+ 量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同
+ 名，才能取到正确的值。
+ */
+ const numbers = ["a", "b", "c", "d", [1, 2, 3, 4]];
+//// 得到numbers下标为4的数组中的下标为2的数据，放到变量n中
+const [, , , , [, , n]] = numbers;
+console.log(n)//3
+</script>
+</body>
+</html>
