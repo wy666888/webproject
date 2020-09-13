@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 标记名：y
+ 含义：匹配时，完全按照正则对象中的lastIndex位置开始匹配，并且匹配的位置必须在lastIndex位
+ 置。
+ */
+const text = "Hello World!!!";
+const reg = /W\w+/y;
+reg.lastIndex = 3;
+console.log("reg.lastIndex:", reg.lastIndex)//3
+console.log(reg.test(text))//false
+</script>
+</body>
+</html>

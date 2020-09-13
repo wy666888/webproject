@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 在模板字符串书写之前，可以加上标记:
+	 标记名`模板字符串`
+	 标记是一个函数，函数参数如下：
+	 1. 参数1：被插值分割的字符串数组
+	 2. 后续参数：所有的插值
+ */
+var love1 = "秋葵";
+var love2 = "香菜";
+var text = myTag`邓哥喜欢${love1}，邓哥也喜欢${love2}。`;
+//相当于：
+// text = myTag(["邓哥喜欢", "，邓哥也喜欢", "。"], "秋葵", "香菜")
+function myTag(parts) {
+console.log('形参parts:',parts,arguments)
+console.log('arguments:',arguments)
+const values = Array.prototype.slice.apply(arguments).slice(1);
+console.log(values)
+let str = "";
+for (let i = 0; i < values.length; i++) {
+str += `${parts[i]}：${values[i]}`;
+if (i === values.length - 1) {
+str += parts[i + 1];
+}
+}
+return str;
+}
+console.log(text);
+</script>
+</body>
+</html>

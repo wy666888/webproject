@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 在ES6中，提供了模板字符串的书写，可以非常方便的换行和拼接，要做的，仅仅是将字符串的开始
+ 或结尾改为 ` 符号
+ 如果要在字符串中拼接js表达式，只需要在模板字符串中使用 ${JS表达式}
+ */
+var love1 = "秋葵";
+var love2 = "香菜";
+var text = `邓哥喜欢${love1}
+邓哥也喜欢${love2}
+表达式可以是任何有意义的数据${1 + 3 * 2 / 0.5}
+表达式是可以嵌套的：${`表达式中的模板字符串${love1 + love2}`}
+\n\n
+奥布瓦的发顺丰
+在模板字符串中使用\${JS表达式}可以进行插值
+`;
+console.log(text);
+</script>
+</body>
+</html>
