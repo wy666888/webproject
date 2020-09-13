@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/*
+ * 3. 非同名属性解构
+ {属性名:变量名}
+ 对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量
+ */
+const user = {
+		name: "kevin",
+		age: 11,
+		sex: "男",
+		address: {
+		province: "四川",
+		city: "成都"
+		}
+		}
+		//解构出user中的name、province
+		//定义两个变量name、province
+		//再解构
+		const { name, address: { province } } = user;
+		//console.log(address)//obj14.html:23 Uncaught ReferenceError: address is not defined
+		console.log(name, province)//kevin 四川
+</script>
+</body>
+</html>
